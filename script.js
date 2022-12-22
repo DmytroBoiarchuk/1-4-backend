@@ -233,7 +233,7 @@ const config1 = {
         {title: 'Avatar', value: 'avatar'},
         {title: 'Birth Day', value: 'birthday'}
     ],
-    apiUrl: "https://mock-api.shpp.me/DmytroBoiarchuk446/users"
+    apiUrl: "https://mock-api.shpp.me/DmytroBoiarchuk/users"
 };
 
 const users = [
