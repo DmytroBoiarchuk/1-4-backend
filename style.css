@@ -1,0 +1,43 @@
+#usersTable .table, th, td {
+    margin: 0;
+    border: 1px solid black;
+}
+table{
+    border-collapse: collapse;
+}
+#usersTable table{
+    width: 100%;
+    margin:30px 0 0 0;
+}
+#usersTable {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+}
+#usersTable tbody tr th{
+    font-weight: 200;
+    font-size: 15px;
+}
+th:nth-child(even),td:nth-child(even) {
+    background-color: rgba(150, 212, 212, 0.4);
+}
+.delete-button{
+    margin: 0 auto;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #964343;
+    color: darkblue;
+}
+.delete-button:hover{
+    cursor: pointer;
+    transition-duration: 789ms;
+    background-color: red;
+
+}
+.search-input{
+    width: 150px;
+    height: 20px;
+    margin: 0 auto;
+}
