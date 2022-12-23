@@ -194,24 +194,31 @@ async function makePost(url, body) {
 
 function dataIsValid() {
     let inputsDatas = document.querySelectorAll(".input-class-name");
-    for (let j = 1; j < inputsDatas.length; j++) {
+    let boolean = true;
+    for (let j = 0; j < inputsDatas.length; j++) {
         if (inputsDatas[j].value === '') {
-            return false;
+            inputsDatas[j].classList.add("input-wrong");
+            inputsDatas[j].addEventListener("input", () =>{
+                inputsDatas[j].classList.remove("input-wrong")
+            } );
+            boolean = false;
         }
     }
-    return true;
+    return boolean;
 }
 
-document.addEventListener('keyup', event => {
-    if (event.code === 'Enter') {
+document.addEventListener('keypress', event => {
+    if (event.key === 'Enter') {
         if (dataIsValid()) {
             let inputsData = document.querySelectorAll(".input-class-name");
+            console.log(inputsData[2].value);
             const obj = {
                 name: inputsData[0].value,
                 surname: inputsData[1].value,
                 avatar: inputsData[2].value,
                 birthday: inputsData[3].value,
             }
+
             let newUrl = config1.apiUrl;
             makePost(newUrl, obj).then(() => {
                 document.getElementsByTagName("table")[0]
@@ -233,7 +240,7 @@ const config1 = {
         {title: 'Avatar', value: 'avatar'},
         {title: 'Birth Day', value: 'birthday'}
     ],
-    apiUrl: "https://mock-api.shpp.me/DmytroBoiarchuk/users"
+    apiUrl: "https://mock-api.shpp.me/DmytroBoiarchuk446/users"
 };
 
 const users = [
